@@ -1,0 +1,22 @@
+imports:
+    - { resource: auth.yml }
+    - { resource: avatar.yml }
+
+services:
+    omni.eveapi.cron:
+        class: omni\eveapi\controller\cron
+        arguments:
+            - @config
+            - @controller.helper
+
+    omni.eveapi.user:
+        class: omni\eveapi\controller\user
+        arguments:
+            - @config
+            - @controller.helper
+
+    omni.eveapi.json:
+        class: omni\eveapi\controller\json
+        arguments:
+            - @config
+            - @controller.helper

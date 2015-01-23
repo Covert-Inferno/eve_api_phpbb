@@ -1,0 +1,30 @@
+<!-- INCLUDE ucp_header.html -->
+<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<th colspan="2" valign="middle">{L_TITLE}</th>
+	</tr>
+<!-- IF ERROR -->
+	<tr>
+		<td class="row3" colspan="2" align="center"><span class="gensmall error">{ERROR}</span></td>
+	</tr>
+<!-- ENDIF -->
+	<tr>
+		<td class="row1" colspan="2" align="center"><b class="genmed">{L_JABBER}: </b><br /><span class="gensmall">{L_JABBER_EXPLAIN}</span></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_JABBER_USERNAME}: </b></td>
+		<td class="row2">{JABBER_USERNAME}</td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_JABBER_PASSWORD}: </b></td>
+		<td class="row2">{JABBER_PASSWORD}</td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_JABBER_HOST}: </b></td>
+		<td class="row2">{JABBER_HOST}</td>
+	</tr>
+	<tr>
+		<td class="cat" colspan="2" align="center">{S_HIDDEN_FIELDS}<input class="btnmain" type="submit" name="submit" value="{L_CHANGE_REGISTER}" /></td>
+	</tr>
+</table>
+<!-- INCLUDE ucp_footer.html -->

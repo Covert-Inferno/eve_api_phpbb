@@ -1,0 +1,30 @@
+<form id="user_overview" method="post" action="{U_ACTION}">
+<fieldset>
+	<legend>{L_EVEAPI_ACCOUNT}</legend>
+<dl>
+	<dt><label for="user">{L_USERNAME}{L_COLON}</label><br /><span>{L_NAME_CHARS_EXPLAIN}</span></dt>
+	<dd><input type="text" id="user" name="user" value="{USER}" /></dd>
+</dl>
+<!-- IF S_USER_INACTIVE -->
+<dl>
+	<dt><label>{L_USER_IS_INACTIVE}{L_COLON}</label></dt>
+	<dd><strong>{USER_INACTIVE_REASON}</strong></dd>
+</dl>
+<!-- ENDIF -->
+<dl>
+        <dt><label for="eveapi_keyid">EVE API KeyId:</label></dt>
+        <dd><input type="text" name="eveapi_keyid" id="eveapi_keyid" size="10" maxlength="15" value="{EVEAPI_KEYID}"  /></dd>
+</dl>
+<dl>
+        <dt><label for="eveapi_vcode">EVE API Verification Code:</label></dt>
+        <dd><input type="text" name="eveapi_vcode" id="eveapi_vcode" size="64" maxlength="64" value="{EVEAPI_VCODE}" /></dd>
+</dl>
+
+<p class="quick">
+	<input class="button1" type="submit" name="update" value="{L_SUBMIT}" />
+	<input type="hidden" name="action" value="" />
+	{S_FORM_TOKEN}
+</p>
+
+</fieldset>
+</form>

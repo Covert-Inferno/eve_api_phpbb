@@ -1,0 +1,28 @@
+<form id="user_overview" method="post" action="{U_ACTION}">
+<fieldset>
+	<legend>{L_EVEAPI_JABBER}</legend>
+<dl>
+	<dt><label>{L_JABBER}{L_COLON}</label></dt>
+	<dd><strong>{L_JABBER_EXPLAIN}</strong></dd>
+</dl>
+<dl>
+        <dt><label>{L_JABBER_USERNAME}{L_COLON}</label></dt>
+        <dd>{JABBER_USERNAME}</dd>
+</dl>
+<dl>
+        <dt><label>{L_JABBER_PASSWORD}{L_COLON}</label></dt>
+        <dd>{JABBER_PASSWORD}</dd>
+</dl>
+<dl>
+        <dt><label>{L_JABBER_HOST}{L_COLON}</label></dt>
+        <dd>{JABBER_HOST}</dd>
+</dl>
+
+<p class="quick">
+	<input class="button1" type="submit" name="update" value="{L_SUBMIT}" />
+	<input type="hidden" name="action" value="" />
+	{S_FORM_TOKEN}
+</p>
+
+</fieldset>
+</form>

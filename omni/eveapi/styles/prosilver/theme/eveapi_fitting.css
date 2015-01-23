@@ -1,0 +1,663 @@
+.fitting_tabs {
+	width: 100%;
+}
+
+ul.fit-tabs {
+	margin: 0;
+	background-color: black;
+	display: block;
+}
+
+li.fit-tab {
+	list-style: none;
+	display: block;
+	float: left;
+	background-color: #333;
+	border: 1px solid black;
+	border-bottom: 0;
+	margin: 0 2px;
+	padding: 8px;
+	color: #ccc;
+}
+
+li.fit-tab:hover
+{
+    color: #fff;
+}
+
+li.fit-tab a
+{
+    color: #ccc;
+}
+
+li.fit-tab a:hover
+{
+    color: #fff;
+    font-style: normal;
+    text-decoration: none;
+}
+
+.fitnotestitle {
+	margin: 10px 5px 0 5px;
+	padding: 2px 4px;
+	border-width: 1px 1px 0 1px;
+	border-style: solid;
+	border-color: #A9B8C2;
+	color: #A9B8C2;
+	background-color: #333333;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	font-size: 0.8em;
+}
+
+.fitnotescontent {
+	direction: ltr;
+	margin: 0 5px 10px 5px;
+	padding: 5px;
+	border-color: #A9B8C2;
+	border-width: 0 1px 1px 1px;
+	border-style: solid;
+	font-weight: normal;
+	color: #eee;
+	font-size: 0.85em;
+	font-family: "Lucida Grande", Verdana, Helvetica, Arial, sans-serif;
+	background-color: #555;
+}
+
+.fittitle {
+	padding: 20px;
+}
+.shipicon {
+    position: absolute;
+    height: 64px;
+    width: 64px;
+    top: 87px;
+    left: 169px;
+    z-index: 1;
+}
+.fittext {
+	position: relative;
+    height: 391px;
+    width: 393px;
+	overflow: hidden;
+	background:black;
+	color:white;
+	padding: 6px;
+}
+
+.fittext textarea {
+	background: black;
+	color: white;
+	font-size: 12px;
+	border: 0px;
+	height: 100%;
+	width: 100%;
+}
+
+.fitting {
+    position: relative;
+    height: 403px;
+    width: 405px;
+    background: #222;
+}
+
+.fitting-window {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+	background:black;
+    width: 405px;
+    height: 403px;
+    z-index: 0;
+}
+
+.fitting-window img {
+    position: absolute;
+    height: 403px;
+    width: 405px;
+    z-index: 999;
+}
+
+.high-1 {
+    position: absolute;
+    left: 86px;
+    top: 37px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-2 {
+    position: absolute;
+    left: 113px;
+    top: 23px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-3 {
+    position: absolute;
+    left: 141px;
+    top: 13px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-4 {
+    position: absolute;
+    left: 172px;
+    top: 7px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-5 {
+    position: absolute;
+    left: 201px;
+    top: 7px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-6 {
+    position: absolute;
+    left: 232px;
+    top: 13px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-7 {
+    position: absolute;
+    left: 261px;
+    top: 23px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-8 {
+    position: absolute;
+    left: 287px;
+    top: 37px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-1 {
+    position: absolute;
+    left: 334px;
+    top: 83px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-2 {
+    position: absolute;
+    left: 350px;
+    top: 111px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-3 {
+    position: absolute;
+    left: 361px;
+    top: 140px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-4 {
+    position: absolute;
+    left: 366px;
+    top: 171px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-5 {
+    position: absolute;
+    left: 366px;
+    top: 201px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-6 {
+    position: absolute;
+    left: 361px;
+    top: 232px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-7 {
+    position: absolute;
+    left: 350px;
+    top: 261px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.medium-8 {
+    position: absolute;
+    left: 334px;
+    top: 289px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-1 {
+    position: absolute;
+    left: 289px;
+    top: 333px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-2 {
+    position: absolute;
+    left: 262px;
+    top: 348px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-3 {
+    position: absolute;
+    left: 233px;
+    top: 360px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-4 {
+    position: absolute;
+    left: 202px;
+    top: 365px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-5 {
+    position: absolute;
+    left: 172px;
+    top: 365px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-6 {
+    position: absolute;
+    left: 141px;
+    top: 360px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-7 {
+    position: absolute;
+    left: 111px;
+    top: 348px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.low-8 {
+    position: absolute;
+    left: 85px;
+    top: 333px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.rig-1 {
+    position: absolute;
+    left: 17px;
+    top: 132px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.rig-2 {
+    position: absolute;
+    left: 29px;
+    top: 102px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.rig-3 {
+    position: absolute;
+    left: 47px;
+    top: 75px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.subsystem-1 {
+    position: absolute;
+    left: 46px;
+    top: 296px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.subsystem-2 {
+    position: absolute;
+    left: 29px;
+    top: 269px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.subsystem-3 {
+    position: absolute;
+    left: 17px;
+    top: 238px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.subsystem-4 {
+    position: absolute;
+    left: 9px;
+    top: 205px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.subsystem-5 {
+    position: absolute;
+    left: 8px;
+    top: 175px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.drone-1 {
+    position: absolute;
+    left: 152px;
+    top: 215px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.drone-2 {
+    position: absolute;
+    left: 217px;
+    top: 215px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.drone-3 {
+    position: absolute;
+    left: 152px;
+    top: 272px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.drone-4 {
+    position: absolute;
+    left: 217px;
+    top: 272px;
+    width: 32px;
+    height: 32px;
+    z-index: 1;
+}
+
+.high-charge-1 {
+    position: absolute;
+    left: 110px;
+    top: 69px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-2 {
+    position: absolute;
+    left: 132px;
+    top: 56px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-3 {
+    position: absolute;
+    left: 154px;
+    top: 47px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-4 {
+    position: absolute;
+    left: 178px;
+    top: 44px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-5 {
+    position: absolute;
+    left: 202px;
+    top: 44px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-6 {
+    position: absolute;
+    left: 226px;
+    top: 47px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-7 {
+    position: absolute;
+    left: 248px;
+    top: 56px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-8 {
+    position: absolute;
+    left: 270px;
+    top: 69px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-1 {
+    position: absolute;
+    left: 310px;
+    top: 104px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-2 {
+    position: absolute;
+    left: 321px;
+    top: 128px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-3 {
+    position: absolute;
+    left: 329px;
+    top: 152px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-4 {
+    position: absolute;
+    left: 335px;
+    top: 176px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-5 {
+    position: absolute;
+    left: 335px;
+    top: 200px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-6 {
+    position: absolute;
+    left: 329px;
+    top: 224px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-7 {
+    position: absolute;
+    left: 321px;
+    top: 248px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.medium-charge-8 {
+    position: absolute;
+    left: 310px;
+    top: 272px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-1 {
+    position: absolute;
+    left: 274px;
+    top: 310px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-2 {
+    position: absolute;
+    left: 250px;
+    top: 322px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-3 {
+    position: absolute;
+    left: 226px;
+    top: 331px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-4 {
+    position: absolute;
+    left: 202px;
+    top: 336px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-5 {
+    position: absolute;
+    left: 178px;
+    top: 336px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-6 {
+    position: absolute;
+    left: 154px;
+    top: 331px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-7 {
+    position: absolute;
+    left: 130px;
+    top: 322px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.low-charge-8 {
+    position: absolute;
+    left: 106px;
+    top: 310px;
+    width: 24px;
+    height: 24px;
+    z-index: 1;
+}
+
+.high-charge-1 img, .high-charge-2 img, .high-charge-3 img, .high-charge-4 img, .high-charge-5 img, .high-charge-6 img, .high-charge-7 img, .high-charge-8 img, .medium-charge-1 img, .medium-charge-2 img, .medium-charge-3 img, .medium-charge-4 img, .medium-charge-5 img, .medium-charge-6 img, .medium-charge-7 img, .medium-charge-8 img, .low-charge-1 img, .low-charge-2 img, .low-charge-3 img, .low-charge-4 img, .low-charge-5 img, .low-charge-6 img, .low-charge-7 img, .low-charge-8 img {
+    height: 24px;
+    width: 24px;
+}

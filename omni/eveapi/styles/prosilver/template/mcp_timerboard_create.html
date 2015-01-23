@@ -1,0 +1,89 @@
+<!-- INCLUDE mcp_header.html -->
+<script type="text/javascript">
+// <![CDATA[
+$(function () {
+  $('#timerSystem').marcoPolo({
+    url: '{JSONURL}',
+    minChars: 2,
+    required: true,
+    selected:  {
+      system: '{SYSTEM}',
+    },
+    formatItem: function (data, $item) {
+      return data.system;
+    },
+    formatMinChars: function (minChars, $item) {
+      return '<em>To search for a System, please enter at least <strong>' + minChars + '</strong> characters.</em>';
+    },
+    formatNoResults : function (q, $item) {
+      return '<em>The System "<strong>' + q + '</strong>" does not exist.</em>';
+    },
+    onSelect: function (data, $item) {
+      this.val(data.system);
+    }
+  });
+});
+// ]]>
+</script>
+<form name="mcp" id="mcp" method="post" action="{S_MCP_ACTION}">
+<table class="tablebg" width="100%" cellspacing="1" id="createtimer">
+	<tr>
+		<th colspan="2" valign="middle">{L_TITLE}</th>
+	</tr>
+<!-- IF ERROR -->
+	<tr>
+		<td class="row3" colspan="2" align="center"><span class="gensmall error">{ERROR}</span></td>
+	</tr>
+<!-- ENDIF -->
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_TYPE}: </b></td>
+		<td class="row2"><select name="timerType">{TYPE_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_OWNER}: </b></td>
+		<td class="row2"><input class="post" type="text" name="timerOwner" size="30" maxlength="255" value="{OWNER}" /></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_SYSTEM}: </b></td>
+		<td class="row2"><input class="post" type="text" id="timerSystem" name="timerSystem" size="30" maxlength="255" value="{SYSTEM}" /></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_ACTION}: </b></td>
+		<td class="row2"><select name="timerAction">{ACTION_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_LOCATION_PLANET}: </b></td>
+		<td class="row2"><select name="timerPlanet">{PLANET_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_LOCATION_MOON}: </b></td>
+		<td class="row2"><select name="timerMoon">{MOON_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_RF_STATUS}: </b></td>
+		<td class="row2"><select name="timerReinforced">{REINFORCED_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_DAYS_EXPIRE}: </b></td>
+		<td class="row2"><select name="timerDays">{DAYS_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_HOURS_EXPIRE}: </b></td>
+		<td class="row2"><select name="timerHours">{HOURS_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_MINUTES_EXPIRE}: </b></td>
+		<td class="row2"><select name="timerMinutes">{MINUTES_SELECT}</select></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">{L_MEMO}: </b></td>
+		<td class="row2"><textarea class="post" name="timerMemo" rows="3" cols="30">{MEMO}</textarea></td>
+	</tr>
+	<tr>
+		<td class="cat" colspan="2" align="center"><input class="btnmain" type="submit" name="submit" value="{L_SUBMIT}" /></td>
+	</tr>
+</table>
+{S_HIDDEN_FIELDS}
+{S_FORM_TOKEN}
+</form>
+<!-- INCLUDE mcp_footer.html -->

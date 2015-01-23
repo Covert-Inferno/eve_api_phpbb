@@ -1,0 +1,11 @@
+services:
+    auth:
+        class: omni\eveapi\auth\auth
+
+    auth.provider.oauth.service.eveonline:
+        class: omni\eveapi\auth\provider\oauth\service\eveonline
+        arguments:
+            - @config
+            - @request
+        tags:
+            - { name: auth.provider.oauth.service }

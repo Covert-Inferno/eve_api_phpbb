@@ -1,0 +1,24 @@
+<form id="user_overview" method="post" action="{U_ACTION}">
+<fieldset>
+	<legend>{L_EVEAPI_TS}</legend>
+<dl>
+	<dt><label>{L_TEAMSPEAK}{L_COLON}</label></dt>
+	<dd><strong>{L_TEAMSPEAK_EXPLAIN}</strong></dd>
+</dl>
+<dl>
+        <dt><label>{L_TEAMSPEAK_USERNAME}{L_COLON}</label></dt>
+        <dd>{USERNAME}</dd>
+</dl>
+<dl>
+        <dt><label>{L_TEAMSPEAK_UID}{L_COLON}</label></dt>
+        <dd>{EVEAPI_TS}</dd>
+</dl>
+
+<p class="quick">
+	<input class="button1" type="submit" name="update" value="{L_SUBMIT}" />
+	<input type="hidden" name="action" value="" />
+	{S_FORM_TOKEN}
+</p>
+
+</fieldset>
+</form>

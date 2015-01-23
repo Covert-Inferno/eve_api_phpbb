@@ -1,0 +1,14 @@
+services:
+    avatar.driver.eveapi:
+        class: omni\eveapi\avatar\driver\eveapi
+        arguments:
+            - @config
+            - %core.root_path%
+            - %core.php_ext%
+            - @path_helper
+            - @mimetype.guesser
+            - @cache.driver
+        calls:
+            - [set_name, [avatar.driver.eveapi]]
+        tags:
+            - { name: avatar.driver }

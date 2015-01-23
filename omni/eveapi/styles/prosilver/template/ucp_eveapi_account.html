@@ -1,0 +1,27 @@
+<!-- INCLUDE ucp_header.html -->
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<th colspan="2" valign="middle">{L_TITLE}</th>
+</tr>
+<!-- IF ERROR -->
+	<tr>
+		<td class="row3" colspan="2" align="center"><span class="gensmall error">{ERROR}</span></td>
+	</tr>
+<!-- ENDIF -->
+<tr>
+	<td class="row1" width="35%"><b class="genmed">{L_USERNAME}: </b><br /><span class="gensmall">{L_USERNAME_EXPLAIN}<br />Your Username must match your EVE Character Name.</span></td>
+	<td class="row2"><!-- IF S_CHANGE_USERNAME --><input type="text" class="post" name="username" size="30" value="{USERNAME}" /><!-- ELSE --><b class="gen">{USERNAME}</b><!-- ENDIF --></td>
+</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">EVE API KeyId: </b></td>
+		<td class="row2"><input type="text" name="eveapi_keyid" id="eveapi_keyid" size="10" maxlength="15" value="{EVEAPI_KEYID}" class="post" title="EVE API KeyId" /></td>
+	</tr>
+	<tr>
+		<td class="row1" width="35%"><b class="genmed">EVE API Verification Code: </b><br /><span class="gensmall">Click <a href="https://support.eveonline.com/api/key/createpredefined/{EVEAPI_ACCESSMASK}" target="_blank">here</a> to create an API key with the correct permissions. Don't forget to set it as &#039;No Expiry&#039;!<br />It can sometimes take up to 15 minutes before the new API key is activated.</span></td>
+		<td class="row2"><input type="text" name="eveapi_vcode" id="eveapi_vcode" size="64" maxlength="64" value="{EVEAPI_VCODE}" class="post" title="EVE API Verification Code" /></td>
+	</tr>
+<tr>
+	<td class="cat" colspan="2" align="center">{S_HIDDEN_FIELDS}<input class="btnmain" type="submit" name="submit" value="{L_SUBMIT}" /></td>
+</tr>
+</table>
+<!-- INCLUDE ucp_footer.html -->

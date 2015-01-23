@@ -1,0 +1,11 @@
+eveapi_controller:
+    pattern: /eveapi/cron
+    defaults: { _controller: omni.eveapi.cron:run }
+
+login_controller:
+    pattern: /eveapi/login
+    defaults: { _controller: omni.eveapi.user:login }
+
+json_controller:
+    pattern: /eveapi/system_json/{q}
+    defaults: { _controller: omni.eveapi.json:search, q: "" }
