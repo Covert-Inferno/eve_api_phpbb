@@ -13,10 +13,11 @@ class	eveapi
 								global	$config,	$phpbb_root_path,	$phpbb_admin_path,	$phpEx;
 								global	$cache;
 
-								$action	=	request_var('action',	'');
+								$user->add_lang('acp/common');
 								$submit	=	(isset($_POST['submit']))	?	true	:	false;
 
-								$form_key	=	'acp_eveapi';
+								$form_key	=	'omni/eveapi';
+
 								add_form_key($form_key);
 
 								/**
@@ -28,7 +29,6 @@ class	eveapi
 								switch	(	$mode	)
 								{
 												case	'general':
-
 																$vars	=	array(
 																				'legend0'											=>	'GENERAL_SETTINGS',
 																				'eveapi_validation'	=>	array(

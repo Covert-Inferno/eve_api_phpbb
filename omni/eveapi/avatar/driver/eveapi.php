@@ -1,6 +1,6 @@
 <?php
 
-namespace	phpbb\avatar\driver;
+namespace	omni\eveapi\avatar\driver;
 
 /**
 	* Handles avatars hosted at eveonline.com

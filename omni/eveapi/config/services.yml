@@ -1,6 +1,7 @@
 imports:
     - { resource: auth.yml }
     - { resource: avatar.yml }
+    - { resource: profilefield.yml }
 
 services:
     omni.eveapi.cron:
@@ -20,3 +21,12 @@ services:
         arguments:
             - @config
             - @controller.helper
+
+    omni.eveapi.listener:
+        class: omni\eveapi\event\main_listener
+        arguments:
+            - @config
+            - @controller.helper
+            - @template
+        tags:
+            - { name: event.listener }

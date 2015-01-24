@@ -1,6 +1,6 @@
 services:
     auth:
-        class: omni\eveapi\auth\auth
+        class: omni\eveapi\auth\auth_eveapi
 
     auth.provider.oauth.service.eveonline:
         class: omni\eveapi\auth\provider\oauth\service\eveonline

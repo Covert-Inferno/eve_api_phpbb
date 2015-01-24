@@ -1,6 +1,6 @@
 <?php
 
-namespace	omni\eveapi\user;
+namespace	omni\eveapi\controller;
 
 class	user
 {

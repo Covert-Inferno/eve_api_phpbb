@@ -1,6 +1,6 @@
 <?php
 
-namespace	omni\eveapi\json;
+namespace	omni\eveapi\controller;
 
 class	json
 {

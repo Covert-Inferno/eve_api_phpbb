@@ -1,6 +1,6 @@
 <?php
 
-namespace	omni\eveapi\cron;
+namespace	omni\eveapi\controller;
 
 class	cron
 {

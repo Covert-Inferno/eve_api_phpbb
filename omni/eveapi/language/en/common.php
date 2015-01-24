@@ -63,6 +63,8 @@ $lang	=	array_merge($lang,	array(
 				'LOG_CONFIG_ACCESSMASK'																	=>	'<strong>Altered EVE API AccessMask settings</strong>',
 				'EVEAPI_DEFAULT'																								=>	'Default group',
 				'EVEAPI_DEFAULT_EXPLAIN'																=>	'Set this forum group as default',
+				'EVEAPI_INVALID_API_KEY'																=> 'Invalid EVE API key.',
+				'EVEAPI_NOT_ALLOWED_ACCOUNT'												=> 'This character is not permitted to have an account on this forum.',
 				));
 
 $lang	=	array_merge($lang,	array(

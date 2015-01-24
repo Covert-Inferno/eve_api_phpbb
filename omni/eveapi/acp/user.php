@@ -28,11 +28,10 @@ class	user
 								$error				=	array();
 								$username	=	utf8_normalize_nfc(request_var('username',	'',	true));
 								$user_id		=	request_var('u',	0);
-								$action			=	request_var('action',	'');
 
 								$submit	=	(isset($_POST['update'])	&&	!isset($_POST['cancel']))	?	true	:	false;
 
-								$form_name	=	'acp_eveapi_user';
+								$form_name	=	'omni/eveapi/user';
 								add_form_key($form_name);
 
 								// Show user selection mask
@@ -53,8 +52,8 @@ class	user
 								if	(	!$user_id	)
 								{
 												$sql					=	'SELECT user_id
-				FROM '	.	USERS_TABLE	.	"
-				WHERE username_clean = '"	.	$db->sql_escape(utf8_clean_string($username))	.	"'";
+																				FROM '	.	USERS_TABLE	.	"
+																				WHERE username_clean = '"	.	$db->sql_escape(utf8_clean_string($username))	.	"'";
 												$result		=	$db->sql_query($sql);
 												$user_id	=	(int)	$db->sql_fetchfield('user_id');
 												$db->sql_freeresult($result);
@@ -67,10 +66,10 @@ class	user
 
 								// Generate content for all modes
 								$sql						=	'SELECT u.*, s.*
-			FROM '	.	USERS_TABLE	.	' u
-				LEFT JOIN '	.	SESSIONS_TABLE	.	' s ON (s.session_user_id = u.user_id)
-			WHERE u.user_id = '	.	$user_id	.	'
-			ORDER BY s.session_time DESC';
+																FROM '	.	USERS_TABLE	.	' u
+																	LEFT JOIN '	.	SESSIONS_TABLE	.	' s ON (s.session_user_id = u.user_id)
+																WHERE u.user_id = '	.	$user_id	.	'
+																ORDER BY s.session_time DESC';
 								$result			=	$db->sql_query_limit($sql,	1);
 								$user_row	=	$db->sql_fetchrow($result);
 								$db->sql_freeresult($result);
@@ -85,11 +84,11 @@ class	user
 
 								// Build modes dropdown list
 								$sql				=	'SELECT module_mode, module_auth
-			FROM '	.	MODULES_TABLE	.	"
-			WHERE module_basename = 'acp_eveapi_user'
-				AND module_enabled = 1
-				AND module_class = 'acp'
-			ORDER BY left_id, module_mode";
+												FROM '	.	MODULES_TABLE	.	"
+												WHERE module_basename = 'acp_eveapi_user'
+													AND module_enabled = 1
+													AND module_class = 'acp'
+												ORDER BY left_id, module_mode";
 								$result	=	$db->sql_query($sql);
 
 								$dropdown_modes	=	array();
@@ -173,6 +172,7 @@ class	user
 																				{
 																								$eveapi_teamSpeakGroups	=	array();
 																								$characterInfo										=	eveapi_checkThisCharacter($data['eveapi_keyid'],	$data['eveapi_vcode'],	$data['username']);
+
 																								if	(	empty($characterInfo["error"])	)
 																								{
 																												if	(	!empty($characterInfo["forumGroups"])	||	(empty($characterInfo["forumGroups"])	&&	$config['eveapi_nonmember'])	)
@@ -228,8 +228,8 @@ class	user
 																				if	(	sizeof($sql_ary)	)
 																				{
 																								$sql	=	'UPDATE '	.	USERS_TABLE	.	'
-				SET '	.	$db->sql_build_array('UPDATE',	$sql_ary)	.	'
-				WHERE user_id = '	.	$user_row['user_id'];
+																																SET '	.	$db->sql_build_array('UPDATE',	$sql_ary)	.	'
+																																WHERE user_id = '	.	$user_row['user_id'];
 																								$db->sql_query($sql);
 																								add_log('admin',	'LOG_USER_USER_UPDATE',	$data['username']);
 																				}
@@ -259,11 +259,11 @@ class	user
 																												break;
 
 																								case	INACTIVE_EVEAPI_INVALID:
-																												$inactive_reason	=	"Invalid EVE API key.";
+																												$inactive_reason	=	$user->lang['EVEAPI_INVALID_API_KEY'];
 																												break;
 
 																								case	INACTIVE_EVEAPI_NONMEMBER:
-																												$inactive_reason	=	"With the current configuration, the user is not allowed to have an account.";
+																												$inactive_reason	=	$user->lang['EVEAPI_NOT_ALLOWED_ACCOUNT'];
 																												break;
 																				}
 																}
@@ -317,7 +317,7 @@ class	user
 																				'S_EVEAPI_JABBER'			=>	true,
 																				'JABBER_USERNAME'			=>	$clean_username,
 																				'JABBER_PASSWORD'			=>	$user_row['user_jabber_password'],
-																				'JABBER_HOST'							=>	'almostawesome.org',
+																				'JABBER_HOST'							=>	$config['eveapi_jabber_hostname'],
 																				'L_EVEAPI_JABBER'			=>	$user->lang['UCP_EVEAPI_JABBER'],
 																				'L_JABBER'										=>	$user->lang['EVEAPI_JABBER_REGISTER'],
 																				'L_JABBER_EXPLAIN'		=>	$user->lang['EVEAPI_JABBER_EXPLAIN'],
@@ -338,7 +338,7 @@ class	user
 
 																								if	(	eveapi_validateMixedalphanumeric($nickname)	!=	1	)
 																								{
-																												$nickname	=	"Cyerus";
+																												$nickname	=	"phpBBbot";
 																								}
 
 																								$ts3_VirtualServer	=	TeamSpeak3::factory("serverquery://"	.	$config["eveapi_ts_username"]	.	":"	.	$config["eveapi_ts_password"]	.	"@"	.	$config["eveapi_ts_ip"]	.	":"	.	$config["eveapi_ts_port_query"]	.	"/?server_port="	.	$config["eveapi_ts_port_server"]	.	"&nickname="	.	$nickname);
@@ -396,8 +396,8 @@ class	user
 																												}
 
 																												$sql	=	'UPDATE '	.	USERS_TABLE	.	'
-				    SET '	.	$db->sql_build_array('UPDATE',	$sql_ary)	.	'
-				    WHERE user_id = '	.	$user_row['user_id'];
+																																				SET '	.	$db->sql_build_array('UPDATE',	$sql_ary)	.	'
+																																				WHERE user_id = '	.	$user_row['user_id'];
 																												$db->sql_query($sql);
 																								}
 																				}
@@ -428,64 +428,5 @@ class	user
 												'S_ERROR'			=>	(sizeof($error))	?	true	:	false,
 												'ERROR_MSG'	=>	(sizeof($error))	?	implode('<br />',	$error)	:	'')
 								);
-				}
-
-				/**
-					* Set option bit field for user options in a user row array.
-					*
-					* Optionset replacement for this module based on $user->optionset.
-					*
-					* @param array $user_row Row from the users table.
-					* @param int $key Option key, as defined in $user->keyoptions property.
-					* @param bool $value True to set the option, false to clear the option.
-					* @param int $data Current bit field value, or false to use $user_row['user_options']
-					* @return int|bool If $data is false, the bit field is modified and
-					*                  written back to $user_row['user_options'], and
-					*                  return value is true if the bit field changed and
-					*                  false otherwise. If $data is not false, the new
-					*                  bitfield value is returned.
-					*/
-				function	optionset(	&$user_row,	$key,	$value,	$data	=	false	)
-				{
-								global	$user;
-
-								$var	=	($data	!==	false)	?	$data	:	$user_row['user_options'];
-
-								$new_var	=	phpbb_optionset($user->keyoptions[$key],	$value,	$var);
-
-								if	(	$data	===	false	)
-								{
-												if	(	$new_var	!=	$var	)
-												{
-																$user_row['user_options']	=	$new_var;
-																return	true;
-												}
-												else
-												{
-																return	false;
-												}
-								}
-								else
-								{
-												return	$new_var;
-								}
-				}
-
-				/**
-					* Get option bit field from user options in a user row array.
-					*
-					* Optionget replacement for this module based on $user->optionget.
-					*
-					* @param array $user_row Row from the users table.
-					* @param int $key option key, as defined in $user->keyoptions property.
-					* @param int $data bit field value to use, or false to use $user_row['user_options']
-					* @return bool true if the option is set in the bit field, false otherwise
-					*/
-				function	optionget(	&$user_row,	$key,	$data	=	false	)
-				{
-								global	$user;
-
-								$var	=	($data	!==	false)	?	$data	:	$user_row['user_options'];
-								return	phpbb_optionget($user->keyoptions[$key],	$var);
 				}
 }

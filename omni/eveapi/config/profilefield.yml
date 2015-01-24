@@ -1,0 +1,8 @@
+services:
+    profilefields.type.eveapi:
+        class: omni\eveapi\profilefields\type\type_eveapi
+        arguments:
+            - @config
+            - @request
+        tags:
+            - { name: profilefield.type }
